@@ -1,4 +1,3 @@
-require 'pry'
 module GithubApi
   module V4
     class User
