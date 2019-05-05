@@ -1,3 +1,4 @@
+require 'pry'
 module GithubApi
   module V4
     class User
@@ -41,14 +42,14 @@ module GithubApi
 
           raise QueryExecutionError, response.data.errors.messages.to_a.join(' : ') if response.data.errors.any?
 
-          langs << response.data.user.repositories.edges.map { |edge| edge.node.primary_language.name }
+          langs << response.data.user.repositories.edges.map { |edge| edge.node.primary_language&.name }
 
           break unless response.data.user.repositories.page_info.has_next_page
 
           repo_cursor = response.data.user.repositories.page_info.end_cursor
         end
 
-        langs.flatten
+        langs.flatten.compact
       end
     end
   end
