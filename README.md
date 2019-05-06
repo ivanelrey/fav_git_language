@@ -25,3 +25,6 @@ GithubApi::V4::User.new('github_username').favorite_language
 ## Requirements
 
 1) Enviroment variable **GITHUB_ACCESS_TOKEN** is required for the gem to work 
+
+## Demo
+https://fav-git-language.herokuapp.com/
