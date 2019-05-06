@@ -1,6 +1,7 @@
 # FavLanguage
 
-fav_language guesses and returns github user's favorite progamming language.
+**fav_language** guesses and returns github user's favorite progamming language.
+Uses Github's graphql API to get the primary languages from the user's repositories and returns the most frequently used language. 
 
 ## Installation
 
@@ -17,7 +18,9 @@ And then execute:
 
 ## Usage
 
-1) GithubApi::V4::User.new('github_username').favorite_language
+```ruby
+GithubApi::V4::User.new('github_username').favorite_language
+```
 
 ## Requirements
 
