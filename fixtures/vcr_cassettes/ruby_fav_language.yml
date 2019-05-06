@@ -1,0 +1,77 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.github.com/graphql
+    body:
+      encoding: UTF-8
+      string: '{"query":"query GithubApi__V4__User__UserPrimaryLangs($username: String!,
+        $repo_cursor: String) {\n  user(login: $username) {\n    repositories(first:
+        50, after: $repo_cursor) {\n      edges {\n        node {\n          primaryLanguage
+        {\n            name\n          }\n        }\n      }\n      pageInfo {\n        endCursor\n        hasNextPage\n      }\n    }\n  }\n}","variables":{"username":"ivanelrey","repo_cursor":null},"operationName":"GithubApi__V4__User__UserPrimaryLangs"}'
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - application/json
+      User-Agent:
+      - Ruby
+      Content-Type:
+      - application/json
+      Authorization:
+      - Bearer 6c1bee554e106bc9feca35cbfe86cd7a931ec81a
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Mon, 06 May 2019 00:45:25 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Status:
+      - 200 OK
+      Cache-Control:
+      - no-cache
+      X-Oauth-Scopes:
+      - public_repo, read:user
+      X-Accepted-Oauth-Scopes:
+      - repo
+      X-Github-Media-Type:
+      - github.v4
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4997'
+      X-Ratelimit-Reset:
+      - '1557107086'
+      Access-Control-Expose-Headers:
+      - ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining,
+        X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval,
+        X-GitHub-Media-Type
+      Access-Control-Allow-Origin:
+      - "*"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      X-Frame-Options:
+      - deny
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Referrer-Policy:
+      - origin-when-cross-origin, strict-origin-when-cross-origin
+      Content-Security-Policy:
+      - default-src 'none'
+      X-Github-Request-Id:
+      - 83BA:2C2B:F07105:1F177F7:5CCF83A5
+    body:
+      encoding: ASCII-8BIT
+      string: '{"data":{"user":{"repositories":{"edges":[{"node":{"primaryLanguage":{"name":"Java"}}},{"node":{"primaryLanguage":{"name":"Java"}}},{"node":{"primaryLanguage":{"name":"Java"}}},{"node":{"primaryLanguage":{"name":"Java"}}},{"node":{"primaryLanguage":{"name":"Java"}}},{"node":{"primaryLanguage":{"name":"PHP"}}},{"node":{"primaryLanguage":{"name":"Java"}}},{"node":{"primaryLanguage":{"name":"Ruby"}}},{"node":{"primaryLanguage":{"name":"Java"}}},{"node":{"primaryLanguage":{"name":"HTML"}}},{"node":{"primaryLanguage":{"name":"Ruby"}}},{"node":{"primaryLanguage":{"name":"Ruby"}}},{"node":{"primaryLanguage":{"name":"Ruby"}}},{"node":{"primaryLanguage":{"name":"JavaScript"}}},{"node":{"primaryLanguage":{"name":"Ruby"}}},{"node":{"primaryLanguage":{"name":"Ruby"}}},{"node":{"primaryLanguage":{"name":"Ruby"}}},{"node":{"primaryLanguage":{"name":"Ruby"}}},{"node":{"primaryLanguage":{"name":"Ruby"}}},{"node":{"primaryLanguage":{"name":"Ruby"}}},{"node":{"primaryLanguage":{"name":"Ruby"}}},{"node":{"primaryLanguage":{"name":"Ruby"}}},{"node":{"primaryLanguage":{"name":"Ruby"}}},{"node":{"primaryLanguage":{"name":"Ruby"}}}],"pageInfo":{"endCursor":"Y3Vyc29yOnYyOpHOCwfcYw==","hasNextPage":false}}}}}'
+    http_version: 
+  recorded_at: Mon, 06 May 2019 00:45:25 GMT
+recorded_with: VCR 4.0.0

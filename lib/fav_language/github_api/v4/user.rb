@@ -1,4 +1,3 @@
-require 'pry'
 module GithubApi
   module V4
     class User
@@ -30,7 +29,12 @@ module GithubApi
 
       def favorite_language
         languages_freq = primary_languages.each_with_object(Hash.new(0)) { |v, h| h[v] += 1; }
-        languages_freq.max_by { |_key, value| value }[0]
+
+        unless languages_freq.empty?
+          languages_freq.max_by { |_key, value| value }[0]
+        else
+          'User has 0 repositories.'
+        end
       end
 
       def primary_languages
